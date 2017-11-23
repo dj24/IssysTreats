@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="master.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="animate.css">
+<link rel="shortcut icon" href="images/cake.ico">
+<script src="js/modernizr.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript">	
+	$(document).ready(function(){
+		
+		
+		$('#desktop a[href*=#]').click(function() {
+			
+			if ( location.hostname == this.hostname) {
+				var $target = $(this.hash);
+				$target = $target.length && $target
+				|| $('[name=' + this.hash.slice(1) +']');
+				
+				if ($target.length) {
+					var targetOffset = $target.offset().top-93;
+					$('html,body').animate({scrollTop: targetOffset}, 1000);
+					return false;
+				}
+			}
+		});
+		$('#mobile a[href*=#]').click(function() {
+		$("#mobile a").addClass("icon_select");
+			if ( location.hostname == this.hostname) {
+				var $target = $(this.hash);
+				$target = $target.length && $target
+				|| $('[name=' + this.hash.slice(1) +']');
+				
+				if ($target.length) {
+					var targetOffset = $target.offset().top;
+					$('html,body').animate({scrollTop: targetOffset}, 1000);
+					return false;
+				}
+			}
+		});
+		
+		var introOffset = $("#item1").offset().top;
+		var galleryOffset = $("#gallery").offset().top-200;
+		var issyOffset = $("#issy").offset().top-200;
+		var contactOffset = $("#contact").offset().top-200;
+		
+		var $w = $(window).scroll(function(){
+			if ( $w.scrollTop() < galleryOffset ) {
+				$(".icon").removeClass("icon_select");
+				$("#icon1").addClass("icon_select");
+
+			} 
+		
+		
+			if ( $w.scrollTop() > galleryOffset ) {
+				$(".icon").removeClass("icon_select");
+				$("#icon2").addClass("icon_select");
+				
+			} 
+		
+		
+			if ( $w.scrollTop() > issyOffset ) { 
+				$(".icon").removeClass("icon_select");
+				$("#icon3").addClass("icon_select");
+			} 
+		
+		
+			if ( $w.scrollTop() > contactOffset ) { 
+				$(".icon").removeClass("icon_select");
+				$("#icon4").addClass("icon_select");
+			} 
+		});
+		
+	});
+</script>
+<script>
+	
+	$(document).ready(function(){
+		$('.info').hide();
+		$('.info:nth-of-type(1)').show();
+		
+
+		$(".thumb:nth-of-type(2)").click(function(){
+			
+				$(".thumb").removeClass("selected");
+				$(this).addClass("selected");
+				$('#img').attr("src","images/bliss.jpeg");
+				$('.info').hide();
+				$('.info:nth-of-type(1)').show();
+			
+		});
+		$(".thumb:nth-of-type(3)").click(function(){
+			
+				$(".thumb").removeClass("selected");
+				$(this).addClass("selected");
+				$('#img').attr("src","images/cashew.jpeg");
+				$('.info').hide();
+				$('.info:nth-of-type(2)').show();
+			
+		});
+		$(".thumb:nth-of-type(4)").click(function(){
+			
+				$(".thumb").removeClass("selected");
+				$(this).addClass("selected");
+				$('#img').attr("src","images/walnut.jpeg");
+				$('.info').hide();
+				$('.info:nth-of-type(3)').show();
+			
+		});
+		$(".thumb").click(function(){
+			$(".arrow_box").fadeOut();
+				
+			
+		});
+		
+		
+	});
+</script>
+<script>
+$(document).ready(function(){
+	$("#mobile a:nth-of-type(1)").hover(function(){
+		$("#labels p:nth-of-type(1").css("opacity","1");
+	},function(){
+		$("#labels p:nth-of-type(1").css("opacity","0");
+	});
+	$("#mobile a:nth-of-type(2)").hover(function(){
+		$("#labels p:nth-of-type(2").css("opacity","1");
+	},function(){
+		$("#labels p:nth-of-type(2").css("opacity","0");
+	});
+	$("#mobile a:nth-of-type(3)").hover(function(){
+		$("#labels p:nth-of-type(3").css("opacity","1");
+	},function(){
+		$("#labels p:nth-of-type(3").css("opacity","0");
+	});
+	$("#mobile a:nth-of-type(4)").hover(function(){
+		$("#labels p:nth-of-type(4").css("opacity","1");
+	},function(){
+		$("#labels p:nth-of-type(4").css("opacity","0");
+	});
+	$("#mobile a:nth-of-type(5)").hover(function(){
+		$("#labels p:nth-of-type(5").css("opacity","1");
+	},function(){
+		$("#labels p:nth-of-type(5").css("opacity","0");
+	});
+	
+});
+</script>
+<title>Issy's Guilt-Free Treats</title>
+</head>
+<body>
+	<div id="logo_container">
+		<img id="logo" alt="Logo" src="images/logo.png">
+	</div>
+		<nav id="desktop">
+			<a href="#item1">Intro</a>
+			<a href="#gallery">Treats</a>
+			<a href="#issy">Issy</a>
+<!--		<a href="#blog">Blog</a> -->
+			<a href="#contact">Contact</a>
+		</nav>
+		<nav id="mobile">
+			<a href="#logo_container"><div class="icon" id="icon1"></div></a>
+			<a href="#gallery"><div class="icon" id="icon2"></div></a>
+			<a href="#issy"><div class="icon" id="icon3"></div></a>
+			<a href="#contact"><div class="icon" id="icon4"></div></a>
+		</nav>
+		<div id="labels">
+			<p>Intro</p>
+			<p>Our Treats</p>
+			<p>About Issy</p>
+			<p>Contact Us</p>
+		</div>
+		<img id="title" alt="title" src="images/title.png">
+		<div id="content">
+			<section id="item1" class="bg">
+			  
+			</section>
+			<div class="panel" id="panel1">
+				<section class="module content">
+				  <div class="container">
+					<h2>Why Issy's Guilt-Free Treats?</h2>
+					<div class="underline"></div>
+					
+						<p>Issy's Guilt-Free Treats are for anyone who has to avoid the "naughty" 
+						foods but still wants to indulge in a treat once in a while. A treat should 
+						be something indulgent and delicious you can enjoy without feeling guilty! 
+						That's how Issy's Guilt-Free Treats came about.
+						</p>
+						<p>After years of being frustrated by the Free-From sections of supermarkets 
+						either, not having suitable indulgent treats or, packing any gluten free treats 
+						with extra sugar, I decided to develop my own range. All my treats are completely:
+						<ul>
+							<li>Gluten free </li>
+							<li>Dairy free</li>
+							<li>Refined sugar free</li>
+							<li>Suitable for vegans</li>
+							<li>Suitable for vegetarians </li>
+						</ul>
+						</p>
+						<p>
+						Plus (to make them even better for you).... There's none of the added junk! 
+						</p>
+						<ul class="list">
+							<li>No preservatives </li>
+							<li>No bulking agents </li>
+							<li>No additives</li>
+						</ul>
+						<p>
+						JUST pure natural ingredients!
+						</p>
+						<h2>Who are they perfect for?</h2>
+						<p>If you have a child who has to avoid the above or you are just trying to keep them away from the sugar aisle, these could be perfect for them. They're a great Christmas stocking filler, Easter basket addition and birthday pressie! </p>
+						<p>If you have a girlfriend, boyfriend, mum, dad, sister, uncle, best friend etc trying to keep healthy but who keeps getting tempted by the chocolate  buttons or Ferrero Rocher these could be the perfect gift! </p>
+						<p>Take a look through the range, see what takes your fancy, then place your order and enjoy to your heart's desire!</p>
+						<p><i>(The best bit is that you don't have to feel guilty about any of it!)</i></p>
+				  </div>
+				</section>
+			</div>
+			
+			<div class="panel" id="gallery">
+				<table >
+  <tr>
+    <td>
+	
+	<img src="images/bliss.jpeg" id="img">
+	<div id="thumb_container">
+	<div class="arrow_box"><h2>Click the icons to browse treats!</h2></div>
+					<div class="thumb selected"></div>
+					<div class="thumb"></div>
+					<div class="thumb"></div>
+
+				</div></td>
+    <td>
+		<div class="info">
+				<h2>Coco Bliss &pound;2.50 per pack of 2</h2>
+				<p>These treats are perfect for the chocoholic who wants to indulge in chocolate heaven without any of the guilt.</p> 
+				<p><i>They have a delicious coating as well!</i></p>
+					<p><b>Ingredients:</b></p>
+					<p>Pecans, dates, almonds, cocoa power, freeze-dried strawberries.</p>
+					
+					
+					<p><i>These treats contain nuts.</i></p>
+				</div>
+				
+				<div class="info">
+				<h2>Cashew Clusters &pound;2.50 per pack of 2</h2>
+				<p>These are perfect for the cashew and truffle lovers who love indulgent treats, but don't want any of the sugar, dairy or guilt.</p> 
+				<p><i>They have a delicious coating as well!</i></p>
+					<p><b>Ingredients:</b></p>
+					<p>Cashews, oats, dates, cocoa powder.</p>
+					
+					
+					<p><i>These treats contain nuts.</i></p>
+				</div>
+				
+				<div class="info">
+				<h2>Walnut Wonders £2.50 per pack of 2</h2>
+				<p>Perfect if you love walnuts and fancy a pick-me-up treat with a little sweetness, a little nuttiness and a cookie dough texture.</p> 
+				<p><i>They have a delicious coating as well!</i></p>
+					<p><b>Ingredients:</b></p>
+					<p>Walnuts, almonds, dates.</p>
+					
+					
+					<p><i>These treats contain nuts.</i></p>
+				</div>
+				
+	</td>
+  </tr>
+</table>
+				
+				
+				
+			</div>
+			<div class="panel" id="panel2">
+				<section class="module content" id="issy">
+				  <div class="container">
+					<h2>About Issy</h2>
+					<div class="underline white" ></div>
+					<div class="inline">
+						<p>Unfortunately at the age of 17 I had to give up gluten, dairy, eggs and refined sugar. Although I was thrilled I got better and my health issues were resolved I was not thrilled at the lack of treats I could enjoy.
+
+Easter was not the same, no matter how many packets of seeds or 100% dark chocolate bars my mum filled my Easter basket with, it never stopped me looking longingly at my sisters Lindt Easter Egg and chocolate truffles. Christmas was always awkward. While my friends could exchange edible goodies everyone struggled to think of a little edible gift they could easily get for me. Don't even get me started on Valentines Day! Getting me a box of chocolates was never an option for my boyfriend.
+
+So I wanted to make yummy treats that I and anyone else out there like me, could truly enjoy and indulge in!
+
+To start with my little balls of heaven are on sale. However, the range is only going to expand, think gooey brownies, crumbly apple crumble and fluffy light muffins. So keep an eye on this page and give my treats a go!
+
+P.s I would love to hear your thoughts on them, always feel free to drop me an email!
+						</p>
+						
+					</div>
+					<div class="inline">
+						<img src="images/woman.jpeg" id="portrait" alt="portrait">
+					</div>
+				  </div>
+				</section>
+			</div>
+<!--			<div class="panel" id="panel3">
+				<section class="module content" id="blog">
+				  <div class="container">
+					<h2>Updates</h2>
+					
+					<div class="blog_post">
+						<h3>Post 1 25/10/2015</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+						ut aliquip ex ea commodo consequat.
+						</p>
+					</div>
+					<div class="blog_post">
+						<h3>Post 2 22/10/2015</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+						sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+						Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
+						ut aliquip ex ea commodo consequat.
+						</p>
+					</div>
+				  </div>
+				</section>
+			</div> -->
+			
+
+			<div class="panel" id="panel4">
+				<section class="module content" id="contact">
+				  <div align="center" class="container">
+					<h2>Contact Us</h2>
+					<div class="underline" ></div>
+					<div class="inline" id="details">
+					<h3>Telephone</h3>
+						<p align="center">07786731377</p>
+						<h3>Email</h3>
+						<p align="center">issysguiltfreetreats@gmail.com</p>
+					</div>
+					
+						<a class="inline_img" href="https://twitter.com/issyhealthylife"><img  src="images/twitter.png" class="contact_logo"></a>
+					
+					
+					<a class="inline_img" href="https://www.instagram.com/issyshealthylife/"><img  src="images/instagram.png" class="contact_logo"></a>
+					
+					<div>
+						
+						
+					</div>
+				  </div>
+				</section>
+			</div>
+			<footer>
+			Daniel Jackson 2015 - danieljackson97123@gmail.com
+			</footer>
+			
+			
+			
+
+		</div>
+	</div>
+<script src="js/demo.js"></script>
+</body>
+</html>
